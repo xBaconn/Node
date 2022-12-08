@@ -1,12 +1,10 @@
 var http = require('http');
-var dia = require('./biblioteca');  
-//const { DiaDaSemana } = require('./biblioteca');
-http.createServer(function (req,res){
-    res.writeHead(200, {'Content-Type':'text/html'})
-    res.write('<h2>Brasil 2 x 1 suiça</h2> \n');
-    res.write('<p style=color:green>'+Date().substring(16, 24)+'<br>');
-    res.write(dia.DiaDaSemana()+'</p><br><br>');
+var url = require('url');
 
-    res.write('gemido da bbw! <br>');
-    res.end('niiannnnnnnnnnnnnnnnnnnnnn!');
-}).listen(3000);
+http.createServer(function (res, res){
+res.writeHead(200, {'content-type': 'text/html'});
+res.wrire(res.url);
+// var q = url.parce(req.url, true).query;
+// var txt = "<br>dia:" "+q.dia+" <br> mes "+q.mes+" <br> ano: "+q.ano";
+//res.end(txt);
+}).listem(80);
